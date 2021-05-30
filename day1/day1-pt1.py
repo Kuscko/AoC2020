@@ -7,7 +7,7 @@ final_value = 0
 solutions = []
 
 # open and loop through each value in the file
-with open('P:\Portfolio\AoC2020\day1\input.txt', 'r') as file:
+with open('input.txt', 'r') as file:
     # assign each value in input file to list
     data = file.read().splitlines()
     for first in data:
