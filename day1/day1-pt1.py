@@ -1,5 +1,5 @@
 # Advent of Code: Day 1 - Part 1
-# completed by Patrick Kelly 5/30/2021 | 12:27AM
+# completed by Patrick Kelly 5/30/2021 | 12:27AM f
 
 # solution variables
 goal = 2020
