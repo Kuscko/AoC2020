@@ -1,13 +1,17 @@
 # Advent of Code: Day 1 - Part 1
 # completed by Patrick Kelly 5/30/2021 | 12:52AM
 
+import os
+
 # solution variables
 goal = 2020
 final_value = 0
 solutions = []
 
+file_path = os.path.join(os.path.dirname(__file__), 'input.txt')
+
 # open and loop through each value in the file
-with open('input.txt', 'r') as file:
+with open(file_path, 'r') as file:
     # assign each value in input file to list
     data = file.read().splitlines()
     for first in data:
