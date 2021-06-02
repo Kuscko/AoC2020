@@ -1,10 +1,10 @@
 # Advent of Code: Day 2 - Part 1
-# completed by Patrick Kelly 6/2/2021 | 6:24PM
+# completed by Patrick Kelly 6/2/2021 | 6:57PM
 
 import os
 
-# get file path of input.txt
-file_path = os.path.join(os.path.dirname(__file__),'input.txt')
+# define file path for the input file
+file_path = os.path.join(os.path.dirname(__file__), 'input.txt')
 
 valid_solutions = 0
 
@@ -20,9 +20,11 @@ with open(file_path) as f:
         min, max = map(int, nums.split("-"))
         char = char.split(":")[0]
         
-        # if the number of characters in the password are between the min and max
-        # values then the the solution is valid and should increment.
-        if(max >= pw.count(char) >= min):
+        # if location in password has either character in 
+        # location min or max, then add to counter.
+        if((pw[min-1] == char) ^ (pw[max-1] == char)):
             valid_solutions += 1
         
 print(valid_solutions)
+
+
