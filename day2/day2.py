@@ -1,4 +1,4 @@
-# Advent of Code: Day 2 - Part 1
+# Advent of Code 2020 Day 2 - Password Philosophy
 # completed by Patrick Kelly 6/2/2021 | 6:24PM
 
 valid_solutions_pt1 = 0
