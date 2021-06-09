@@ -1,15 +1,12 @@
 # Advent of Code: Day 3 - Part 1
 # completed by Patrick Kelly 6/9/2021 | 4:21PM
 
-import os
-
 def create_list(file_name):
     with(open(file_name) as f):
         return f.read().splitlines()
 
 # fetch file path & create list
-file_path = os.path.join(os.path.dirname(__file__), 'input.txt')
-input_data = create_list(file_path)
+input_data = create_list('inputs/day_03-input.txt')
 
 # declare constants
 line_len = len(input_data[0])
