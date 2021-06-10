@@ -2,6 +2,13 @@
 import math
 
 def create_list(file_name):
+    """
+        args: 
+            file_name -> the file path to the input.txt file
+
+        Returns: 
+            Each line of the input txt file to a list as seperate values.
+    """
     with(open(file_name) as f):
         return f.read().splitlines()
 
