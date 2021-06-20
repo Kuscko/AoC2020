@@ -1,3 +1,0 @@
-for goal in bags:
-    bag = bags[goal]
-    bag_values, bag_names = [int(v) for v in bag.split() if v.isdigit()]
