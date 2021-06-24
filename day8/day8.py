@@ -2,7 +2,6 @@
 
 # imports
 import re
-import numpy as np
 
 class Solutions:
     def __init__(self, input):
