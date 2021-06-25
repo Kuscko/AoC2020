@@ -1,5 +1,7 @@
 # Advent of Code 2020 Day 9 - Encoding Error
 
+import numpy as np
+
 class Solution:
     def __init__(self, input):
         self.input = input
@@ -33,16 +35,25 @@ class Solution:
                     return self[index] # return the value that cannot be solved for. 
             index += 1 # increments index to get preamble and loop through xmas_encryption list.
   
-    def find_solution_pt2(self, start, index, preamble, invalid_number):
+    def find_solution_pt2(self, invalid_number):
         ''' 
-            TO be updated
+            Loop through each value in xmax_encrytion list and append them to a numpy array using i as the beginning index and j as the ending index. 
+            Then we test the sum of the numpy array using .sum() method and check if it equals the invalid number returned from Solution1.
+
+            Args:
+                self -> xmas_encryption list of integers.
+                invalid_number -> invalid_number found in solution1.
         '''
-        
-        return self
+        for i in range(0, len(self)-1): # range through list, starting at index 0
+            for j in range(1, len(self) - 1): # range through list, starting at index 1
+                coniguous_array = np.array(self[i:j]) # create numpy array using xmas_encryption list[i:to:j]
+                if np.sum(coniguous_array) == invalid_number: # check if sum of np.array = invalid number from solution 1
+                    return coniguous_array.min()+coniguous_array.max() # return sum of min/max values in coniguous_array.
 
                 
 with open('inputs/day_09-input.txt', 'r') as input:
     xmas_encryption = [int(input) for input in input.read().splitlines()]
     solution1 = Solution.find_solution_pt1(xmas_encryption, 0, 25, 25)
-    solution2 = Solution.find_solution_pt2(xmas_encryption, 0, 1, 1, xmas_encryption.index(solution1))
+    solution2 = Solution.find_solution_pt2(xmas_encryption, solution1)
     print("Solution 1: ", solution1)
+    print("Solution 2: ", solution2)
